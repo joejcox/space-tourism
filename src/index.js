@@ -4,11 +4,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./assets/tailwind.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <HelmetProvider>
+    <Router>
+      <App />
+    </Router>
+  </HelmetProvider>,
   document.getElementById("root")
 );
 

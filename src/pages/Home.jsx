@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Heading from "../components/Heading";
 import SectionTitle from "../components/SectionTitle";
@@ -5,6 +6,9 @@ import Paragraph from "../components/Paragraph";
 
 const Home = () => (
   <section className="hero bg-hero-desktop bg-no-repeat bg-cover h-screen bg-blue-500 flex justify-center items-end sm:py-32 2xl:py-48">
+    <Helmet>
+      <title>Space Tourism</title>
+    </Helmet>
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-8">
       <div className="xl:col-start-2 xl:col-span-2 px-5">
         <Heading highlight>So, you want to travel to</Heading>

@@ -5,6 +5,7 @@ import Heading from "../../components/Heading";
 import SectionTitle from "../../components/SectionTitle";
 import Paragraph from "../../components/Paragraph";
 import PlanetStats from "./PlanetStats";
+import { Helmet } from "react-helmet-async";
 
 const Planet = ({ data }) => {
   const { destinations } = data[0];
@@ -46,6 +47,9 @@ const Planet = ({ data }) => {
     Object.keys(planetData).length > 0 && (
       <>
         <header className="page-container">
+          <Helmet>
+            <title>{name} | Destination - Space Tourism</title>
+          </Helmet>
           <Heading number="01" size={4}>
             Pick your destination
           </Heading>
