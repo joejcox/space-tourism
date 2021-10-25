@@ -46,7 +46,7 @@ const Planet = ({ data }) => {
   const showContent = () =>
     Object.keys(planetData).length > 0 && (
       <>
-        <header className="page-container">
+        <header className="page-container page-header">
           <Helmet>
             <title>{name} | Destination - Space Tourism</title>
           </Helmet>

@@ -32,6 +32,12 @@ html {
     margin: 0 auto;
   }
 
+  .page-header {
+    max-width: 1400px;
+    margin-top: -1rem;
+    margin-bottom: 3rem;
+  }
+
   .explore,
   .navigation,
   .navigation a,
