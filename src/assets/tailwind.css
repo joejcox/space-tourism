@@ -1,0 +1,163 @@
+@import "../../node_modules/tailwindcss/base.css";
+@import "../../node_modules/tailwindcss/components.css";
+@import "../../node_modules/tailwindcss/utilities.css";
+
+body,
+html {
+  height: 100%;
+}
+
+.hero {
+  height: 100%;
+  background-position: 50% 65%;
+  min-height: 100vh;
+}
+
+.page-container {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.stats {
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+  border-top: 1px solid hsl(0, 0%, 59%);
+}
+
+@media screen and (min-width: 1024px) {
+  .page-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
+  .explore,
+  .navigation,
+  .navigation a,
+  .nav-tabs,
+  .active {
+    position: relative;
+  }
+
+  .explore::after,
+  .navigation::before,
+  .navigation a::after,
+  .nav-tabs::after,
+  .active::after {
+    position: absolute;
+    content: "";
+  }
+
+  .explore {
+    z-index: 10;
+  }
+
+  .explore::after {
+    transition: 0.2s ease;
+    border-radius: 100%;
+    width: 26rem;
+    height: 26rem;
+    top: -4rem;
+    left: -4rem;
+    background: rgba(255, 255, 255, 0.308);
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.7);
+    pointer-events: none;
+  }
+
+  .explore:hover::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .navigation {
+    padding-left: 3rem;
+  }
+
+  .navigation::before {
+    background: hsla(0, 0%, 100%, 0.05);
+    left: -5rem;
+    height: 100%;
+    width: 5rem;
+    backdrop-filter: blur;
+  }
+
+  .navigation::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 1px;
+    background: hsl(0, 0%, 59%);
+    right: calc(100% + 2rem);
+    top: 50%;
+  }
+
+  .navigation a {
+    display: inline-flex;
+    height: 100%;
+    color: white;
+    margin-right: 3rem;
+    align-items: center;
+  }
+
+  .active::after,
+  .navigation a::after,
+  .nav-tabs::after {
+    transition: 0.2s ease;
+    height: 2px;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+  .navigation a::after,
+  .nav-tabs::after {
+    background: rgba(255, 255, 255, 0.678);
+  }
+
+  .navigation a.active::after,
+  .nav-tabs.active::after {
+    background: white;
+  }
+
+  .navigation a:last-child {
+    margin-right: 0;
+  }
+
+  .nav-tabs {
+    padding: 0.75rem 0;
+    margin-right: 2rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .navigation a::after,
+  .nav-tabs::after {
+    position: absolute;
+    max-width: 0;
+  }
+
+  .navigation a.active::after,
+  .active::after,
+  .navigation a:hover::after,
+  .nav-tabs:hover::after {
+    max-width: 100%;
+  }
+
+  .navigation a:hover::after,
+  .nav-tabs:hover::after {
+    left: 0;
+    transition: 0.2s ease;
+    background: rgba(255, 255, 255, 0.678);
+  }
+
+  .navigation a.active:hover::after,
+  .nav-tabs.active:hover::after {
+    background: white;
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  .navigation::after {
+    width: 65%;
+  }
+}
