@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, Redirect } from "react-router-dom";
+import Home from "./pages/Home";
+import Planet from "./pages/Destination/Planet";
+import Header from "./components/Header";
+import Data from "./data.js";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Switch>
+        <Route path="/destination/:planetId">
+          <Planet data={Data} />
+        </Route>
+        <Route path="/destination">
+          <Redirect to="/destination/moon" />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;
