@@ -17,6 +17,7 @@ module.exports = {
       yellow: colors.amber,
       dark: "hsl(230, 35%, 7%)",
       highlight: "hsl(231, 77%, 90%)",
+      grey: "hsl(0, 0%, 59%);",
     },
     fontFamily: {
       "is-serif": ["Bellefair", "serif"],
@@ -45,6 +46,8 @@ module.exports = {
           "url('../../src/assets/home/background-home-desktop.jpg')",
         "hero-destination-desktop":
           "url('../../src/assets/destination/background-destination-desktop.jpg')",
+        "hero-crew-desktop":
+          "url('../../src/assets/crew/background-crew-desktop.jpg')",
       },
     },
   },

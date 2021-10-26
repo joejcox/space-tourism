@@ -1,6 +1,7 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
-import Planet from "./pages/Destination/Planet";
+import Destination from "./pages/Destination";
+import Crew from "./pages/Crew";
 import Header from "./components/Header";
 import Data from "./data.js";
 
@@ -9,8 +10,14 @@ const App = () => {
     <div className="App">
       <Header />
       <Switch>
+        <Route path="/crew/:crewId">
+          <Crew data={Data} />
+        </Route>
+        <Route path="/crew">
+          <Redirect to="/crew/Douglas-Hurley" />
+        </Route>
         <Route path="/destination/:planetId">
-          <Planet data={Data} />
+          <Destination data={Data} />
         </Route>
         <Route path="/destination">
           <Redirect to="/destination/moon" />

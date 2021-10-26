@@ -1,6 +1,10 @@
 const Heading = ({ children, highlight, number }) => {
   const handleNumber = () =>
-    number && <span className="text-gray-700 font-bold mr-8">{number}</span>;
+    number && (
+      <span className="text-white text-opacity-50 font-bold mr-8">
+        {number}
+      </span>
+    );
 
   return (
     <h1
